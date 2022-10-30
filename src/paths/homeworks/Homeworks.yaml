@@ -1,0 +1,9 @@
+get:
+  tags:
+    - Homework_ポイント管理
+  operationId: getHomeworks
+  summary: 家事一覧
+  description: 家事一覧を取得する。
+  responses:
+    200:
+      description: 正常応答
