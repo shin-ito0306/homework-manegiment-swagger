@@ -1,0 +1,18 @@
+openapi: 3.0.1
+
+info:
+  title: 家事管理アプリ API
+  description: 家事管理アプリのAPIswagger
+  version: 1.0
+
+servers:
+  - url: http://localhost:8000
+    description: 未定
+
+tags:
+  - name: Homework_家事管理
+
+paths:
+  /homeworks:
+    $ref: "./src/paths/homeworks/Homeworks.yaml"
+
