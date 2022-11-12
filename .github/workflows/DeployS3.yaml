@@ -1,6 +1,6 @@
 name: deploy-s3
 on:
-  push:
+  pull_request:
     branches:
       - main
 
@@ -15,4 +15,5 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_S3_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_S3_SEACRET_ACCESS_KEY }}
-        run: aws s3 cp --recursive --region ap-northeast-1 build s3://homework-manegiment-swagger-s3-backet
+        run: |
+          aws s3 cp . s3://homework-manegiment-swagger-s3-backet --recursive --region ap-northeast-1 --include "swagger.yaml" --include "index.html" --recursive
